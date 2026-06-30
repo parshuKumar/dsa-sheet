@@ -31,7 +31,7 @@
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
@@ -45,6 +45,7 @@
         h1 {
             color: #fff;
             margin-bottom: 5px;
+            letter-spacing: 1px;
         }
 
         .subtitle {
@@ -61,36 +62,70 @@
         }
 
         .phase-title {
-            color: var(--accent);
-            border-bottom: 1px solid var(--border);
+            color: #fff;
+            background: linear-gradient(90deg, #1f6feb, #58a6ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            border-bottom: 2px solid var(--border);
             padding-bottom: 8px;
             margin-top: 0;
+            font-size: 1.5rem;
+        }
+
+        .pattern-container {
+            margin-bottom: 25px;
+            border: 1px solid rgba(48, 54, 61, 0.5);
+            border-radius: 6px;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .pattern-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+            gap: 10px;
         }
 
         .pattern-title {
             color: #fff;
-            font-size: 1.2rem;
-            margin: 20px 0 10px 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .pattern-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 3px 10px;
+            border-radius: 4px;
+            border: 1px solid var(--border);
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 20px;
+            margin-top: 5px;
         }
 
         th, td {
             text-align: left;
-            padding: 12px;
+            padding: 10px 12px;
             border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
         }
 
         th {
-            background-color: rgba(0, 0, 0, 0.2);
+            background-color: rgba(0, 0, 0, 0.3);
             color: #fff;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background-color: rgba(255, 255, 255, 0.02);
         }
 
         a {
@@ -102,15 +137,15 @@
             text-decoration: underline;
         }
 
-        /* Badges */
         .badge {
             display: inline-block;
             padding: 2px 8px;
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 600;
             border-radius: 2em;
             color: #fff;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .diff-easy { background-color: var(--easy); }
@@ -123,13 +158,18 @@
         .type-contest { background-color: var(--contest); }
 
         .checkbox-col {
-            width: 40px;
+            width: 35px;
             text-align: center;
         }
 
         input[type="checkbox"] {
             cursor: pointer;
-            transform: scale(1.2);
+            transform: scale(1.1);
+        }
+        
+        @media (max-width: 768px) {
+            th, td { padding: 8px 6px; font-size: 0.8rem; }
+            .pattern-header { flex-direction: column; align-items: flex-start; }
         }
     </style>
 </head>
@@ -138,272 +178,874 @@
 <div class="container">
     <header>
         <h1>DSA GRANDMASTER MASTERY</h1>
-        <div class="subtitle">From 1600 → 2000+ Rating | 4 Months | C++ Dashboard</div>
+        <div class="subtitle">Complete 35-Pattern Dashboard | C++ Track Plan</div>
     </header>
 
     <div class="phase-section">
         <h2 class="phase-title">PHASE 1 — FOUNDATION (Weeks 1-3)</h2>
 
-        <div class="pattern-title">
-            <span>Pattern 01 — Arrays and Hashing</span>
-            <span style="font-size: 0.9rem; color: var(--text-muted)">Difficulty: FOUNDATION</span>
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 01 — Arrays and Hashing</div>
+                <div class="pattern-meta">Difficulty: FOUNDATION | Time: 3-4 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/two-sum/" target="_blank">Two Sum (LC 1)</a></td><td><span class="badge type-warmup">Warmup</span> complement lookup</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/contains-duplicate/" target="_blank">Contains Duplicate (LC 217)</a></td><td><span class="badge type-warmup">Warmup</span> hash set existence</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/valid-anagram/" target="_blank">Valid Anagram (LC 242)</a></td><td><span class="badge type-core">Core</span> frequency counting</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/group-anagrams/" target="_blank">Group Anagrams (LC 49)</a></td><td><span class="badge type-core">Core</span> grouping by sorted key</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/top-k-frequent-elements/" target="_blank">Top K Frequent Elements (LC 347)</a></td><td><span class="badge type-core">Core</span> frequency + bucket sort</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/product-of-array-except-self/" target="_blank">Product of Array Except Self (LC 238)</a></td><td><span class="badge type-core">Core</span> prefix/suffix updates</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/longest-consecutive-sequence/" target="_blank">Longest Consecutive Sequence (LC 128)</a></td><td><span class="badge type-stretch">Stretch</span> hash set + jump starting</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/subarray-sum-equals-k/" target="_blank">Subarray Sum Equals K (LC 560)</a></td><td><span class="badge type-stretch">Stretch</span> prefix sum + hash map</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/encode-and-decode-strings/" target="_blank">Encode and Decode Strings (LC 271)</a></td><td><span class="badge type-stretch">Stretch</span> serialization layout</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/first-missing-positive/" target="_blank">First Missing Positive (LC 41)</a></td><td><span class="badge type-contest">Contest</span> cyclic sorting map</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/minimum-window-substring/" target="_blank">Minimum Window Substring (LC 76)</a></td><td><span class="badge type-contest">Contest</span> frequency mapping structure</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                </tbody>
+            </table>
         </div>
-        <table>
-            <thead>
-                <tr>
-                    <th class="checkbox-col">✓</th>
-                    <th>Problem Name</th>
-                    <th>Type Description</th>
-                    <th>Difficulty</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/two-sum/" target="_blank">Two Sum (LC 1)</a></td>
-                    <td><span class="badge type-warmup">Warmup</span> complement lookup</td>
-                    <td><span class="badge diff-easy">Easy</span></td>
-                </tr>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/contains-duplicate/" target="_blank">Contains Duplicate (LC 217)</a></td>
-                    <td><span class="badge type-warmup">Warmup</span> hash set existence</td>
-                    <td><span class="badge diff-easy">Easy</span></td>
-                </tr>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/valid-anagram/" target="_blank">Valid Anagram (LC 242)</a></td>
-                    <td><span class="badge type-core">Core</span> frequency counting</td>
-                    <td><span class="badge diff-easy">Easy</span></td>
-                </tr>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/group-anagrams/" target="_blank">Group Anagrams (LC 49)</a></td>
-                    <td><span class="badge type-core">Core</span> grouping by sorted key</td>
-                    <td><span class="badge diff-medium">Medium</span></td>
-                </tr>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/top-k-frequent-elements/" target="_blank">Top K Frequent Elements (LC 347)</a></td>
-                    <td><span class="badge type-core">Core</span> frequency + bucket sort</td>
-                    <td><span class="badge diff-medium">Medium</span></td>
-                </tr>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/product-of-array-except-self/" target="_blank">Product of Array Except Self (LC 238)</a></td>
-                    <td><span class="badge type-core">Core</span> prefix/suffix without division</td>
-                    <td><span class="badge diff-medium">Medium</span></td>
-                </tr>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/longest-consecutive-sequence/" target="_blank">Longest Consecutive Sequence (LC 128)</a></td>
-                    <td><span class="badge type-stretch">Stretch</span> hash set + intelligent start</td>
-                    <td><span class="badge diff-medium">Medium</span></td>
-                </tr>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/subarray-sum-equals-k/" target="_blank">Subarray Sum Equals K (LC 560)</a></td>
-                    <td><span class="badge type-stretch">Stretch</span> prefix sum + hash map</td>
-                    <td><span class="badge diff-medium">Medium</span></td>
-                </tr>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/encode-and-decode-strings/" target="_blank">Encode and Decode Strings (LC 271)</a></td>
-                    <td><span class="badge type-stretch">Stretch</span> encoding design</td>
-                    <td><span class="badge diff-medium">Medium</span></td>
-                </tr>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/first-missing-positive/" target="_blank">First Missing Positive (LC 41)</a></td>
-                    <td><span class="badge type-contest">Contest</span> cyclic sort / index mapping</td>
-                    <td><span class="badge diff-hard">Hard</span></td>
-                </tr>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/minimum-window-substring/" target="_blank">Minimum Window Substring - Hash Part (LC 76)</a></td>
-                    <td><span class="badge type-contest">Contest</span> frequency matching</td>
-                    <td><span class="badge diff-hard">Hard</span></td>
-                </tr>
-            </tbody>
-        </table>
 
-        <div class="pattern-title">
-            <span>Pattern 02 — Two Pointers</span>
-            <span style="font-size: 0.9rem; color: var(--text-muted)">Difficulty: FOUNDATION</span>
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 02 — Two Pointers</div>
+                <div class="pattern-meta">Difficulty: FOUNDATION | Time: 3-4 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/valid-palindrome/" target="_blank">Valid Palindrome (LC 125)</a></td><td><span class="badge type-warmup">Warmup</span> opposite direction scan</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/" target="_blank">Two Sum II - Input Sorted (LC 167)</a></td><td><span class="badge type-warmup">Warmup</span> left-right converging bounds</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/3sum/" target="_blank">3Sum (LC 15)</a></td><td><span class="badge type-core">Core</span> anchor index + 2 pointer checks</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/container-with-most-water/" target="_blank">Container With Most Water (LC 11)</a></td><td><span class="badge type-core">Core</span> shrink pointer with lower value</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/sort-colors/" target="_blank">Sort Colors (LC 75)</a></td><td><span class="badge type-core">Core</span> Dutch national flag grouping</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/" target="_blank">Remove Duplicates II (LC 80)</a></td><td><span class="badge type-core">Core</span> write cursor tracking offset</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/trapping-rain-water/" target="_blank">Trapping Rain Water (LC 42)</a></td><td><span class="badge type-stretch">Stretch</span> elevation boundary updates</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/4sum/" target="_blank">4Sum (LC 18)</a></td><td><span class="badge type-stretch">Stretch</span> nested two-pointer reduction</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/boats-to-save-people/" target="_blank">Boats to Save People (LC 881)</a></td><td><span class="badge type-stretch">Stretch</span> greedy pairings matching values</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/shortest-unsorted-continuous-subarray/" target="_blank">Shortest Unsorted Subarray (LC 581)</a></td><td><span class="badge type-contest">Contest</span> value boundaries exploration</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/number-of-subsequences-that-satisfy-given-sum/" target="_blank">Subsequences Satisfying Sum (LC 1498)</a></td><td><span class="badge type-contest">Contest</span> two pointer combinations + mod math</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                </tbody>
+            </table>
         </div>
-        <table>
-            <thead>
-                <tr>
-                    <th class="checkbox-col">✓</th>
-                    <th>Problem Name</th>
-                    <th>Type Description</th>
-                    <th>Difficulty</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/valid-palindrome/" target="_blank">Valid Palindrome (LC 125)</a></td>
-                    <td><span class="badge type-warmup">Warmup</span> opposite direction</td>
-                    <td><span class="badge diff-easy">Easy</span></td>
-                </tr>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/" target="_blank">Two Sum II - Sorted (LC 167)</a></td>
-                    <td><span class="badge type-warmup">Warmup</span> classic left-right</td>
-                    <td><span class="badge diff-medium">Medium</span></td>
-                </tr>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/3sum/" target="_blank">3Sum (LC 15)</a></td>
-                    <td><span class="badge type-core">Core</span> three pointers, skip duplicates</td>
-                    <td><span class="badge diff-medium">Medium</span></td>
-                </tr>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/container-with-most-water/" target="_blank">Container With Most Water (LC 11)</a></td>
-                    <td><span class="badge type-core">Core</span> shrink the lesser side</td>
-                    <td><span class="badge diff-medium">Medium</span></td>
-                </tr>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/sort-colors/" target="_blank">Sort Colors (LC 75)</a></td>
-                    <td><span class="badge type-core">Core</span> Dutch national flag</td>
-                    <td><span class="badge diff-medium">Medium</span></td>
-                </tr>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/" target="_blank">Remove Duplicates II (LC 80)</a></td>
-                    <td><span class="badge type-core">Core</span> same direction write pointer</td>
-                    <td><span class="badge diff-medium">Medium</span></td>
-                </tr>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/trapping-rain-water/" target="_blank">Trapping Rain Water (LC 42)</a></td>
-                    <td><span class="badge type-stretch">Stretch</span> two pointer with max tracking</td>
-                    <td><span class="badge diff-hard">Hard</span></td>
-                </tr>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/4sum/" target="_blank">4Sum (LC 18)</a></td>
-                    <td><span class="badge type-stretch">Stretch</span> extend 3Sum pattern</td>
-                    <td><span class="badge diff-medium">Medium</span></td>
-                </tr>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/boats-to-save-people/" target="_blank">Boats to Save People (LC 881)</a></td>
-                    <td><span class="badge type-stretch">Stretch</span> greedy + two pointers</td>
-                    <td><span class="badge diff-medium">Medium</span></td>
-                </tr>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/shortest-unsorted-continuous-subarray/" target="_blank">Shortest Unsorted Subarray (LC 581)</a></td>
-                    <td><span class="badge type-contest">Contest</span> find boundaries</td>
-                    <td><span class="badge diff-medium">Medium</span></td>
-                </tr>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/number-of-subsequences-that-satisfy-given-sum/" target="_blank">Number of Subsequences (LC 1498)</a></td>
-                    <td><span class="badge type-contest">Contest</span> two pointer + modular arithmetic</td>
-                    <td><span class="badge diff-medium">Medium</span></td>
-                </tr>
-            </tbody>
-        </table>
+
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 03 — Sliding Window</div>
+                <div class="pattern-meta">Difficulty: FOUNDATION | Time: 4-5 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/" target="_blank">Best Time to Buy Stock (LC 121)</a></td><td><span class="badge type-warmup">Warmup</span> running min tracking</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/maximum-average-subarray-i/" target="_blank">Maximum Average Subarray I (LC 643)</a></td><td><span class="badge type-warmup">Warmup</span> simple static window size</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/" target="_blank">Longest Substring No Repeats (LC 3)</a></td><td><span class="badge type-core">Core</span> dynamic sliding via unique set</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/longest-repeating-character-replacement/" target="_blank">Longest Repeating Replacement (LC 424)</a></td><td><span class="badge type-core">Core</span> character metrics window lookup</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/permutation-in-string/" target="_blank">Permutation in String (LC 567)</a></td><td><span class="badge type-core">Core</span> explicit window frequency tracking</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/minimum-window-substring/" target="_blank">Minimum Window Substring (LC 76)</a></td><td><span class="badge type-core">Core</span> contract window bounds dynamically</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/subarrays-with-k-different-integers/" target="_blank">Subarrays with K Distinct (LC 992)</a></td><td><span class="badge type-stretch">Stretch</span> exact configuration difference trick</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/minimum-size-subarray-sum/" target="_blank">Minimum Size Subarray Sum (LC 209)</a></td><td><span class="badge type-stretch">Stretch</span> variable window scanning scale</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/max-consecutive-ones-iii/" target="_blank">Max Consecutive Ones III (LC 1004)</a></td><td><span class="badge type-stretch">Stretch</span> zero replacement condition tracking</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/sliding-window-maximum/" target="_blank">Sliding Window Maximum (LC 239)</a></td><td><span class="badge type-contest">Contest</span> window traversal using dequeue index</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/minimum-number-of-operations to-make-array-continuous/" target="_blank">Continuous Subarray Conversion (LC 2009)</a></td><td><span class="badge type-contest">Contest</span> sorted range window check</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 04 — Stack and Monotonic Stack</div>
+                <div class="pattern-meta">Difficulty: FOUNDATION | Time: 4-5 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/valid-parentheses/" target="_blank">Valid Parentheses (LC 20)</a></td><td><span class="badge type-warmup">Warmup</span> open close balancing checks</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/min-stack/" target="_blank">Min Stack (LC 155)</a></td><td><span class="badge type-warmup">Warmup</span> parallel minimum tracker layer</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/next-greater-element-i/" target="_blank">Next Greater Element I (LC 496)</a></td><td><span class="badge type-core">Core</span> structural entry logic pattern</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/daily-temperatures/" target="_blank">Daily Temperatures (LC 739)</a></td><td><span class="badge type-core">Core</span> monotonic decreasing indices setup</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/evaluate-reverse-polish-notation/" target="_blank">Evaluate Reverse Polish Notation (LC 150)</a></td><td><span class="badge type-core">Core</span> basic token operations parsing</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/largest-rectangle-in-histogram/" target="_blank">Largest Rectangle in Histogram (LC 84)</a></td><td><span class="badge type-core">Core</span> index expansion lookup width boundary</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/trapping-rain-water/" target="_blank">Trapping Rain Water (LC 42)</a></td><td><span class="badge type-stretch">Stretch</span> stack structural level computation</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/sum-of-subarray-minimums/" target="_blank">Sum of Subarray Minimums (LC 907)</a></td><td><span class="badge type-stretch">Stretch</span> element index contribution spans</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/online-stock-span/" target="_blank">Online Stock Span (LC 901)</a></td><td><span class="badge type-stretch">Stretch</span> incremental structure index tracker</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/maximal-rectangle/" target="_blank">Maximal Rectangle (LC 85)</a></td><td><span class="badge type-contest">Contest</span> stacked matrix histogram loop bounds</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/sum-of-subarray-ranges/" target="_blank">Sum of Subarray Ranges (LC 2104)</a></td><td><span class="badge type-contest">Contest</span> total range metrics integration</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 05 — Binary Search</div>
+                <div class="pattern-meta">Difficulty: FOUNDATION | Time: 5-6 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/binary-search/" target="_blank">Binary Search (LC 704)</a></td><td><span class="badge type-warmup">Warmup</span> exact split range selection</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/search-insert-position/" target="_blank">Search Insert Position (LC 35)</a></td><td><span class="badge type-warmup">Warmup</span> boundary edge index return logic</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/" target="_blank">First and Last Position (LC 34)</a></td><td><span class="badge type-core">Core</span> edge condition matching dual updates</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/search-in-rotated-sorted-array/" target="_blank">Search Rotated Array (LC 33)</a></td><td><span class="badge type-core">Core</span> detect continuous range sorting cuts</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/find-peak-element/" target="_blank">Find Peak Element (LC 162)</a></td><td><span class="badge type-core">Core</span> directional coordinate peak selection</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/koko-eating-bananas/" target="_blank">Koko Eating Bananas (LC 875)</a></td><td><span class="badge type-core">Core</span> binary scale range answer checks</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/" target="_blank">Capacity to Ship Packages (LC 1011)</a></td><td><span class="badge type-stretch">Stretch</span> allocation feasibility scanning scale</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/split-array-largest-sum/" target="_blank">Split Array Largest Sum (LC 410)</a></td><td><span class="badge type-stretch">Stretch</span> range sum allocation ceiling optimization</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/median-of-two-sorted-arrays/" target="_blank">Median of Two Arrays (LC 4)</a></td><td><span class="badge type-stretch">Stretch</span> balanced range partitions split balance</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/magnetic-force-between-two-balls/" target="_blank">Magnetic Force Between Balls (LC 1552)</a></td><td><span class="badge type-contest">Contest</span> placement gap maximum tracking verification</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/minimize-max-distance-to-gas-station/" target="_blank">Minimize Max Distance Gas Station (LC 774)</a></td><td><span class="badge type-contest">Contest</span> fractional metrics scale updates validation</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/find-in-mountain-array/" target="_blank">Find in Mountain Array (LC 1095)</a></td><td><span class="badge type-contest">Contest</span> peak localization + distinct range lookups</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 06 — Prefix Sums and Difference Arrays</div>
+                <div class="pattern-meta">Difficulty: FOUNDATION | Time: 3-4 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/running-sum-of-1d-array/" target="_blank">Running Sum of 1D Array (LC 1480)</a></td><td><span class="badge type-warmup">Warmup</span> sequential baseline addition loops</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/range-sum-query-immutable/" target="_blank">Range Sum Query - Immutable (LC 303)</a></td><td><span class="badge type-warmup">Warmup</span> cached boundary array extraction</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/subarray-sum-equals-k/" target="_blank">Subarray Sum Equals K (LC 560)</a></td><td><span class="badge type-core">Core</span> cumulative values validation layout</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/continuous-subarray-sum/" target="_blank">Continuous Subarray Sum (LC 523)</a></td><td><span class="badge type-core">Core</span> index distance + prefix coordinate mods</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/range-sum-query-2d-immutable/" target="_blank">Range Sum Query 2D (LC 304)</a></td><td><span class="badge type-core">Core</span> matrix layout balance calculations</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/product-of-array-except-self/" target="_blank">Product of Array Except Self (LC 238)</a></td><td><span class="badge type-core">Core</span> bidirectional product updates execution</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/subarray-sums-divisible by-k/" target="_blank">Subarray Sums Divisible by K (LC 974)</a></td><td><span class="badge type-stretch">Stretch</span> modular frequency remainder counting</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/count-number-of-nice-subarrays/" target="_blank">Count Nice Subarrays (LC 1248)</a></td><td><span class="badge type-stretch">Stretch</span> input conversion indexing lookup maps</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/maximum-subarray-sum-with-one-deletion/" target="_blank">Subarray Sum With Deletion (LC 1186)</a></td><td><span class="badge type-stretch">Stretch</span> edge connection split index values</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/range-addition/" target="_blank">Range Addition (LC 370)</a></td><td><span class="badge type-contest">Contest</span> edge interval markup transformation</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/corporate-flight-bookings/" target="_blank">Corporate Flight Bookings (LC 1109)</a></td><td><span class="badge type-contest">Contest</span> delta array boundary index changes</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <div class="phase-section">
         <h2 class="phase-title">PHASE 2 — CORE DATA STRUCTURES (Weeks 3-6)</h2>
 
-        <div class="pattern-title">
-            <span>Pattern 07 — Linked Lists</span>
-            <span style="font-size: 0.9rem; color: var(--text-muted)">Difficulty: CORE</span>
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 07 — Linked Lists</div>
+                <div class="pattern-meta">Difficulty: CORE | Time: 3-4 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/reverse-linked-list/" target="_blank">Reverse Linked List (LC 206)</a></td><td><span class="badge type-warmup">Warmup</span> reference flipping operations</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/linked-list-cycle/" target="_blank">Linked List Cycle (LC 141)</a></td><td><span class="badge type-warmup">Warmup</span> cycle pointer distance check</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/merge-two-sorted-lists/" target="_blank">Merge Two Sorted Lists (LC 21)</a></td><td><span class="badge type-core">Core</span> node link updates tracking</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/" target="_blank">Remove Nth Node From End (LC 19)</a></td><td><span class="badge type-core">Core</span> dual pointers lookahead window offset</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/linked-list-cycle-ii/" target="_blank">Linked List Cycle II (LC 142)</a></td><td><span class="badge type-core">Core</span> loop node matching convergence bounds</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/reorder-list/" target="_blank">Reorder List (LC 143)</a></td><td><span class="badge type-core">Core</span> cut middle + reverse + interleave links</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/copy-list-with-random-pointer/" target="_blank">Copy List Random Pointer (LC 138)</a></td><td><span class="badge type-stretch">Stretch</span> deep copy structural nodes mirroring</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/add-two-numbers/" target="_blank">Add Two Numbers (LC 2)</a></td><td><span class="badge type-stretch">Stretch</span> carry digit sequence insertion logic</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/lru-cache/" target="_blank">LRU Cache (LC 146)</a></td><td><span class="badge type-stretch">Stretch</span> map lookups integrated with list shifts</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/merge-k-sorted-lists/" target="_blank">Merge K Sorted Lists (LC 23)</a></td><td><span class="badge type-contest">Contest</span> heap node extraction sequences balance</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/reverse-nodes-in-k-group/" target="_blank">Reverse Nodes in k-Group (LC 25)</a></td><td><span class="badge type-contest">Contest</span> batch boundaries structural link resets</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                </tbody>
+            </table>
         </div>
-        <table>
-            <thead>
-                <tr>
-                    <th class="checkbox-col">✓</th>
-                    <th>Problem Name</th>
-                    <th>Type Description</th>
-                    <th>Difficulty</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/reverse-linked-list/" target="_blank">Reverse Linked List (LC 206)</a></td>
-                    <td><span class="badge type-warmup">Warmup</span> basic reversal</td>
-                    <td><span class="badge diff-easy">Easy</span></td>
-                </tr>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/linked-list-cycle/" target="_blank">Linked List Cycle (LC 141)</a></td>
-                    <td><span class="badge type-warmup">Warmup</span> fast-slow detection</td>
-                    <td><span class="badge diff-easy">Easy</span></td>
-                </tr>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/merge-two-sorted-lists/" target="_blank">Merge Two Sorted Lists (LC 21)</a></td>
-                    <td><span class="badge type-core">Core</span> merge with dummy</td>
-                    <td><span class="badge diff-easy">Easy</span></td>
-                </tr>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/" target="_blank">Remove Nth Node From End (LC 19)</a></td>
-                    <td><span class="badge type-core">Core</span> two pointer gap technique</td>
-                    <td><span class="badge diff-medium">Medium</span></td>
-                </tr>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/linked-list-cycle-ii/" target="_blank">Linked List Cycle II (LC 142)</a></td>
-                    <td><span class="badge type-core">Core</span> find cycle entry point</td>
-                    <td><span class="badge diff-medium">Medium</span></td>
-                </tr>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/reorder-list/" target="_blank">Reorder List (LC 143)</a></td>
-                    <td><span class="badge type-core">Core</span> find middle + reverse + merge</td>
-                    <td><span class="badge diff-medium">Medium</span></td>
-                </tr>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/copy-list-with-random-pointer/" target="_blank">Copy List with Random Pointer (LC 138)</a></td>
-                    <td><span class="badge type-stretch">Stretch</span> hash map or interleaving</td>
-                    <td><span class="badge diff-medium">Medium</span></td>
-                </tr>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/add-two-numbers/" target="_blank">Add Two Numbers (LC 2)</a></td>
-                    <td><span class="badge type-stretch">Stretch</span> carry propagation</td>
-                    <td><span class="badge diff-medium">Medium</span></td>
-                </tr>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/lru-cache/" target="_blank">LRU Cache (LC 146)</a></td>
-                    <td><span class="badge type-stretch">Stretch</span> doubly linked list + hash map</td>
-                    <td><span class="badge diff-medium">Medium</span></td>
-                </tr>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/merge-k-sorted-lists/" target="_blank">Merge K Sorted Lists (LC 23)</a></td>
-                    <td><span class="badge type-contest">Contest</span> heap + linked list</td>
-                    <td><span class="badge diff-hard">Hard</span></td>
-                </tr>
-                <tr>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                    <td><a href="https://leetcode.com/problems/reverse-nodes-in-k-group/" target="_blank">Reverse Nodes in k-Group (LC 25)</a></td>
-                    <td><span class="badge type-contest">Contest</span> batch reversal</td>
-                    <td><span class="badge diff-hard">Hard</span></td>
-                </tr>
-            </tbody>
-        </table>
+
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 08 — Trees — DFS Complete</div>
+                <div class="pattern-meta">Difficulty: CORE | Time: 5-6 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/" target="_blank">Maximum Depth of Tree (LC 104)</a></td><td><span class="badge type-warmup">Warmup</span> simple node height depth scaling</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/invert-binary-tree/" target="_blank">Invert Binary Tree (LC 226)</a></td><td><span class="badge type-warmup">Warmup</span> bottom-up structural tree inversion</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/diameter-of-binary-tree/" target="_blank">Diameter of Binary Tree (LC 543)</a></td><td><span class="badge type-core">Core</span> evaluate child spans, update diameter</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/validate-binary-search-tree/" target="_blank">Validate BST (LC 98)</a></td><td><span class="badge type-core">Core</span> propagate value constraint checking limits</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/" target="_blank">LCA of BST (LC 235)</a></td><td><span class="badge type-core">Core</span> directional selection binary navigation</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/" target="_blank">LCA of Binary Tree (LC 236)</a></td><td><span class="badge type-core">Core</span> dual recursive path tracking lookup</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/binary-tree-maximum-path-sum/" target="_blank">Maximum Path Sum (LC 124)</a></td><td><span class="badge type-stretch">Stretch</span> path extraction branching sum update logic</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/" target="_blank">Build Tree Pre/Inorder (LC 105)</a></td><td><span class="badge type-stretch">Stretch</span> divide and conquer over array limits</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/serialize-and-deserialize-binary-tree/" target="_blank">Serialize/Deserialize Tree (LC 297)</a></td><td><span class="badge type-stretch">Stretch</span> preorder layout structural encoding</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/kth-smallest-element-in-a-bst/" target="_blank">Kth Smallest in BST (LC 230)</a></td><td><span class="badge type-contest">Contest</span> in-order iteration node count lookup</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/count-good-nodes-in-binary-tree/" target="_blank">Count Good Nodes (LC 1448)</a></td><td><span class="badge type-contest">Contest</span> value maximum tracking tracking rules</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 09 — Trees — BFS and Level Order</div>
+                <div class="pattern-meta">Difficulty: CORE | Time: 2-3 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/binary-tree-level-order-traversal/" target="_blank">Level Order Traversal (LC 102)</a></td><td><span class="badge type-warmup">Warmup</span> basic queue block sizing loop</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/minimum-depth-of-binary-tree/" target="_blank">Minimum Depth of Tree (LC 111)</a></td><td><span class="badge type-warmup">Warmup</span> termination at target leaf node</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/binary-tree-right-side-view/" target="_blank">Right Side View (LC 199)</a></td><td><span class="badge type-core">Core</span> isolate terminal element of layer</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/" target="_blank">Zigzag Level Order (LC 103)</a></td><td><span class="badge type-core">Core</span> collection ordering direction toggle</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/populating-next-right-pointers-in-each-node/" target="_blank">Populate Next Right (LC 116)</a></td><td><span class="badge type-core">Core</span> direct structure linkage pointers shift</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/average-of-levels in-binary-tree/" target="_blank">Average of Levels (LC 637)</a></td><td><span class="badge type-core">Core</span> cumulative metrics assessment row updates</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/symmetric-tree/" target="_blank">Symmetric Tree (LC 101)</a></td><td><span class="badge type-stretch">Stretch</span> mirrored queue data matching runs</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/even-odd-tree/" target="_blank">Even Odd Tree (LC 1609)</a></td><td><span class="badge type-stretch">Stretch</span> layout constraints value tracking validation</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/maximum-width-of-binary-tree/" target="_blank">Maximum Width of Tree (LC 662)</a></td><td><span class="badge type-stretch">Stretch</span> coordinate indexing tracking logic overflow</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/" target="_blank">Vertical Order Traversal (LC 987)</a></td><td><span class="badge type-contest">Contest</span> 2D map column alignment grid sorting</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/bus-routes/" target="_blank">Bus Routes (LC 815)</a></td><td><span class="badge type-contest">Contest</span> implicit layout state node graph mapping</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 10 — Heap and Priority Queue</div>
+                <div class="pattern-meta">Difficulty: CORE | Time: 4-5 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/kth-largest-element-in-a-stream/" target="_blank">Kth Largest in Stream (LC 703)</a></td><td><span class="badge type-warmup">Warmup</span> bounded min-heap limit tracking</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/last-stone-weight/" target="_blank">Last Stone Weight (LC 1046)</a></td><td><span class="badge type-warmup">Warmup</span> simple sorting reductions cycle</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/k-closest-points-to-origin/" target="_blank">K Closest Points (LC 973)</a></td><td><span class="badge type-core">Core</span> custom metrics sorting capacity checks</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/top-k-frequent-elements/" target="_blank">Top K Frequent Elements (LC 347)</a></td><td><span class="badge type-core">Core</span> occurrences mapping + tree indexing extraction</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/kth-largest-element-in-an-array/" target="_blank">Kth Largest in Array (LC 215)</a></td><td><span class="badge type-core">Core</span> standard tree extraction or quickselect</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/merge-k-sorted-lists/" target="_blank">Merge K Sorted Lists (LC 23)</a></td><td><span class="badge type-core">Core</span> min-heap structure for current node heads</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/find-median-from-data-stream/" target="_blank">Median from Data Stream (LC 295)</a></td><td><span class="badge type-stretch">Stretch</span> dual max/min structural balance tuning</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/task-scheduler/" target="_blank">Task Scheduler (LC 621)</a></td><td><span class="badge type-stretch">Stretch</span> priority scheduling combined with waiting structures</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/reorganize-string/" target="_blank">Reorganize String (LC 767)</a></td><td><span class="badge type-stretch">Stretch</span> character usage sequence balancing checks</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/ipo/" target="_blank">IPO (LC 502)</a></td><td><span class="badge type-contest">Contest</span> resource threshold filter + optimal returns tree</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/" target="_blank">Smallest Range K Lists (LC 632)</a></td><td><span class="badge type-contest">Contest</span> heap window limits tracking index bounds</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 11 — Intervals</div>
+                <div class="pattern-meta">Difficulty: CORE | Time: 3 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/meeting-rooms/" target="_blank">Meeting Rooms (LC 252)</a></td><td><span class="badge type-warmup">Warmup</span> direct segment overlap detection loops</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/merge-intervals/" target="_blank">Merge Intervals (LC 56)</a></td><td><span class="badge type-warmup">Warmup</span> sequence sort + continuous block growth</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/insert-interval/" target="_blank">Insert Interval (LC 57)</a></td><td><span class="badge type-core">Core</span> linear range localization + consolidation runs</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/non-overlapping-intervals/" target="_blank">Non-overlapping Intervals (LC 435)</a></td><td><span class="badge type-core">Core</span> greedy sorting tracking using completion coordinates</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/meeting-rooms-ii/" target="_blank">Meeting Rooms II (LC 253)</a></td><td><span class="badge type-core">Core</span> dynamic allocation tree vs timeline sweeping scans</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/interval-list-intersections/" target="_blank">Interval List Intersections (LC 986)</a></td><td><span class="badge type-core">Core</span> dual segment index comparisons step calculations</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/" target="_blank">Burst Balloons Arrows (LC 452)</a></td><td><span class="badge type-stretch">Stretch</span> tight interval grouping optimization bounds</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/employee-free-time/" target="_blank">Employee Free Time (LC 759)</a></td><td><span class="badge type-stretch">Stretch</span> combined list scanning gaps localization tracking</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/remove-covered-intervals/" target="_blank">Remove Covered Intervals (LC 1288)</a></td><td><span class="badge type-stretch">Stretch</span> precise sort order layout comparisons check</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/my-calendar-i/" target="_blank">My Calendar I / II / III (LC 729)</a></td><td><span class="badge type-contest">Contest</span> tree index tracking timeline value updates</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/data-stream-as-disjoint-intervals/" target="_blank">Data Stream Intervals (LC 352)</a></td><td><span class="badge type-contest">Contest</span> active structure index lookup consolidation tracking</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 12 — Graphs — BFS and DFS</div>
+                <div class="pattern-meta">Difficulty: CORE | Time: 5-6 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/number-of-islands/" target="_blank">Number of Islands (LC 200)</a></td><td><span class="badge type-warmup">Warmup</span> grid flood fill execution rounds</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/flood-fill/" target="_blank">Flood Fill (LC 733)</a></td><td><span class="badge type-warmup">Warmup</span> primary recursion coordinate updates</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/clone-graph/" target="_blank">Clone Graph (LC 133)</a></td><td><span class="badge type-core">Core</span> object layout tracing via tracking lookup map</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/rotting-oranges/" target="_blank">Rotting Oranges (LC 994)</a></td><td><span class="badge type-core">Core</span> multi-source queue index propagation layers</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/pacific-atlantic-water-flow/" target="_blank">Pacific Atlantic Flow (LC 417)</a></td><td><span class="badge type-core">Core</span> boundary inversion graph search checks</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/course-schedule/" target="_blank">Course Schedule (LC 207)</a></td><td><span class="badge type-core">Core</span> layout path validation node loop checking</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/word-ladder/" target="_blank">Word Ladder (LC 127)</a></td><td><span class="badge type-stretch">Stretch</span> metric node variations shortest tracking runs</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/surrounded-regions/" target="_blank">Surrounded Regions (LC 130)</a></td><td><span class="badge type-stretch">Stretch</span> edge connection anchor search protection</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/shortest-path-in-binary-matrix/" target="_blank">Shortest Path in Grid (LC 1091)</a></td><td><span class="badge type-stretch">Stretch</span> direct directional layout routing queue validation</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/walls-and-gates/" target="_blank">Walls and Gates (LC 286)</a></td><td><span class="badge type-contest">Contest</span> parallel root tracking metrics expansion</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/graph-valid-tree/" target="_blank">Graph Valid Tree (LC 261)</a></td><td><span class="badge type-contest">Contest</span> structural node connection verify rules</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/shortest-bridge/" target="_blank">Shortest Bridge (LC 934)</a></td><td><span class="badge type-contest">Contest</span> cluster location tag + layer routing growth</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 13 — Graphs — Union Find (DSU)</div>
+                <div class="pattern-meta">Difficulty: CORE | Time: 3-4 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/" target="_blank">Connected Components (LC 323)</a></td><td><span class="badge type-warmup">Warmup</span> baseline partition consolidation loop</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/redundant-connection/" target="_blank">Redundant Connection (LC 684)</a></td><td><span class="badge type-warmup">Warmup</span> detect branch intersection component cycle</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/number-of-provinces/" target="_blank">Number of Provinces (LC 547)</a></td><td><span class="badge type-core">Core</span> matrix layout grouping updates track</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/accounts-merge/" target="_blank">Accounts Merge (LC 721)</a></td><td><span class="badge type-core">Core</span> key token consolidation maps connection</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/longest-consecutive-sequence/" target="_blank">Longest Consecutive (LC 128)</a></td><td><span class="badge type-core">Core</span> value range component link structure alternative</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/satisfiability-of-equality-equations/" target="_blank">Equality Equations (LC 990)</a></td><td><span class="badge type-core">Core</span> constraint node groups + verify violations</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/number-of-islands-ii/" target="_blank">Number of Islands II (LC 305)</a></td><td><span class="badge type-stretch">Stretch</span> incremental structure layout consolidation checks</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/smallest-string-with-swaps/" target="_blank">Smallest String Swaps (LC 1202)</a></td><td><span class="badge type-stretch">Stretch</span> component index group extraction sorting runs</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/" target="_blank">Most Stones Removed (LC 947)</a></td><td><span class="badge type-stretch">Stretch</span> coordinate map axis index grouping sets</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/swim-in-rising-water/" target="_blank">Swim in Rising Water (LC 778)</a></td><td><span class="badge type-contest">Contest</span> metric edge selection loop component matching</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/minimize-malware-spread/" target="_blank">Minimize Malware Spread (LC 924)</a></td><td><span class="badge type-contest">Contest</span> cluster size metrics tracking value lookup</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 14 — Graphs — Shortest Path</div>
+                <div class="pattern-meta">Difficulty: CORE | Time: 4-5 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/network-delay-time/" target="_blank">Network Delay Time (LC 743)</a></td><td><span class="badge type-warmup">Warmup</span> pure metric tree routing loop template</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/path-with-maximum-probability/" target="_blank">Max Probability Path (LC 1514)</a></td><td><span class="badge type-warmup">Warmup</span> multiplicative tree value metrics logic</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/cheapest-flights-within-k-stops/" target="_blank">Cheapest Flights K Stops (LC 787)</a></td><td><span class="badge type-core">Core</span> range step limits updates track logic</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/path-with-minimum-effort/" target="_blank">Path With Minimum Effort (LC 1631)</a></td><td><span class="badge type-core">Core</span> threshold metric binary check bounds</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/swim-in-rising-water/" target="_blank">Swim in Rising Water (LC 778)</a></td><td><span class="badge type-core">Core</span> layout coordinate tree navigation loops</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/shortest-path-in-binary-matrix/" target="_blank">Shortest Path Matrix (LC 1091)</a></td><td><span class="badge type-core">Core</span> static step index array routing queue runs</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/" target="_blank">City Smallest Neighbors (LC 1334)</a></td><td><span class="badge type-stretch">Stretch</span> complete matrix path layout limits mapping</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/shortest-path-to-get-all-keys/" target="_blank">Shortest Path All Keys (LC 864)</a></td><td><span class="badge type-stretch">Stretch</span> layout positioning + target state collection bitmask</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/" target="_blank">Minimum Cost Valid Path (LC 1368)</a></td><td><span class="badge type-stretch">Stretch</span> zero-one dequeue index routing strategy</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/number-of-ways to-arrive-at-destination/" target="_blank">Ways to Arrive Destination (LC 1976)</a></td><td><span class="badge type-contest">Contest</span> metric paths + configuration route calculations</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/shortest-path-visiting-all-nodes/" target="_blank">Shortest Path All Nodes (LC 847)</a></td><td><span class="badge type-contest">Contest</span> combined node structure navigation state bitmask</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 15 — Backtracking</div>
+                <div class="pattern-meta">Difficulty: CORE | Time: 4-5 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/subsets/" target="_blank">Subsets (LC 78)</a></td><td><span class="badge type-warmup">Warmup</span> state inclusion choice tree tracking</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/permutations/" target="_blank">Permutations (LC 46)</a></td><td><span class="badge type-warmup">Warmup</span> layout configurations selection swaps</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/combinations/" target="_blank">Combinations (LC 77)</a></td><td><span class="badge type-core">Core</span> target size combination range limitations</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/combination-sum/" target="_blank">Combination Sum (LC 39)</a></td><td><span class="badge type-core">Core</span> index reuse allocation paths checking</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/subsets-ii/" target="_blank">Subsets II (LC 90)</a></td><td><span class="badge type-core">Core</span> elements duplicate filtering range cuts</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/permutations-ii/" target="_blank">Permutations II (LC 47)</a></td><td><span class="badge type-core">Core</span> configuration index duplicate protection logic</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/palindrome-partitioning/" target="_blank">Palindrome Partitioning (LC 131)</a></td><td><span class="badge type-stretch">Stretch</span> text validation slice path search</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/word-search/" target="_blank">Word Search (LC 79)</a></td><td><span class="badge type-stretch">Stretch</span> layout coordinate search path protection</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/n-queens/" target="_blank">N-Queens (LC 51)</a></td><td><span class="badge type-stretch">Stretch</span> line and axis block validations tracking</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/sudoku-solver/" target="_blank">Sudoku Solver (LC 37)</a></td><td><span class="badge type-contest">Contest</span> dense constraint checking state resolution</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/letter-combinations-of-a-phone-number/" target="_blank">Letter Combinations (LC 17)</a></td><td><span class="badge type-contest">Contest</span> key map selection tracking expansion</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="phase-section">
+        <h2 class="phase-title">PHASE 3 — DYNAMIC PROGRAMMING (Weeks 6-10)</h2>
+
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 16 — DP Fundamentals</div>
+                <div class="pattern-meta">Difficulty: CORE | Time: 3 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/fibonacci-number/" target="_blank">Fibonacci Number (LC 509)</a></td><td><span class="badge type-warmup">Warmup</span> state memory base initialization loops</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/climbing-stairs/" target="_blank">Climbing Stairs (LC 70)</a></td><td><span class="badge type-warmup">Warmup</span> simple index combination calculations</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/min-cost-climbing-stairs/" target="_blank">Min Cost Climbing Stairs (LC 746)</a></td><td><span class="badge type-core">Core</span> index route state choice validation</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/house-robber/" target="_blank">House Robber (LC 198)</a></td><td><span class="badge type-core">Core</span> pick or ignore element selection state rules</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/house-robber-ii/" target="_blank">House Robber II (LC 213)</a></td><td><span class="badge type-core">Core</span> circular range boundary separate calculations</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/unique-paths/" target="_blank">Unique Paths (LC 62)</a></td><td><span class="badge type-core">Core</span> matrix coordinate options combination updates</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/coin-change/" target="_blank">Coin Change (LC 322)</a></td><td><span class="badge type-stretch">Stretch</span> target combination space mapping allocation</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/longest-increasing-subsequence/" target="_blank">LIS (LC 300)</a></td><td><span class="badge type-stretch">Stretch</span> sequential item relation checking state</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/word-break/" target="_blank">Word Break (LC 139)</a></td><td><span class="badge type-stretch">Stretch</span> text index tracking substring confirmation</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/maximum-subarray/" target="_blank">Maximum Subarray (LC 53)</a></td><td><span class="badge type-core">Core</span> local element calculation choice mapping</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 17 — 1D DP</div>
+                <div class="pattern-meta">Difficulty: CORE | Time: 4-5 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/climbing-stairs/" target="_blank">Climbing Stairs (LC 70)</a></td><td><span class="badge type-warmup">Warmup</span> index progression data storage matching</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/min-cost-climbing-stairs/" target="_blank">Min Cost Stairs (LC 746)</a></td><td><span class="badge type-warmup">Warmup</span> baseline step route price optimization</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/house-robber/" target="_blank">House Robber (LC 198)</a></td><td><span class="badge type-core">Core</span> element inclusion state alternation mapping</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/house-robber-ii/" target="_blank">House Robber II (LC 213)</a></td><td><span class="badge type-core">Core</span> boundary closure layout range splits</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/decode-ways/" target="_blank">Decode Ways (LC 91)</a></td><td><span class="badge type-core">Core</span> string parsing token branch combination checks</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/jump-game/" target="_blank">Jump Game (LC 55)</a></td><td><span class="badge type-core">Core</span> index reachability tracking bounds structure</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/jump-game-ii/" target="_blank">Jump Game II (LC 45)</a></td><td><span class="badge type-stretch">Stretch</span> level optimization metrics boundary scan</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/word-break/" target="_blank">Word Break (LC 139)</a></td><td><span class="badge type-stretch">Stretch</span> subset range parsing validation tracking</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/maximum-product-subarray/" target="_blank">Max Product Subarray (LC 152)</a></td><td><span class="badge type-stretch">Stretch</span> dual max/min tracking inversion loops</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/longest-turbulent-subarray/" target="_blank">Longest Turbulent Subarray (LC 978)</a></td><td><span class="badge type-contest">Contest</span> value comparison sequence switch track</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/delete-and-earn/" target="_blank">Delete and Earn (LC 740)</a></td><td><span class="badge type-contest">Contest</span> array item transformation tracking structures</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/minimum-cost-for-tickets/" target="_blank">Minimum Cost For Tickets (LC 983)</a></td><td><span class="badge type-contest">Contest</span> multiple selection range cost analysis</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 18 — 2D DP and Grid DP</div>
+                <div class="pattern-meta">Difficulty: CORE | Time: 4-5 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/unique-paths/" target="_blank">Unique Paths (LC 62)</a></td><td><span class="badge type-warmup">Warmup</span> standard grid step additions grid</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/unique-paths-ii/" target="_blank">Unique Paths II (LC 63)</a></td><td><span class="badge type-warmup">Warmup</span> obstacle validation index map clear</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/minimum-path-sum/" target="_blank">Minimum Path Sum (LC 64)</a></td><td><span class="badge type-core">Core</span> coordinate direction selection min calculation</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/triangle/" target="_blank">Triangle (LC 120)</a></td><td><span class="badge type-core">Core</span> bottom-up row reduction grid alignment</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/maximal-square/" target="_blank">Maximal Square (LC 221)</a></td><td><span class="badge type-core">Core</span> multi-axis side limit extraction match</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/dungeon-game/" target="_blank">Dungeon Game (LC 174)</a></td><td><span class="badge type-core">Core</span> target tracking reverse metrics logic</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/cherry-pickup/" target="_blank">Cherry Pickup (LC 741)</a></td><td><span class="badge type-stretch">Stretch</span> parallel coordinate state tracking synchronization</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/longest-common-subsequence/" target="_blank">LCS (LC 1143)</a></td><td><span class="badge type-stretch">Stretch</span> dual text character index mapping matrix</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/interleaving-string/" target="_blank">Interleaving String (LC 97)</a></td><td><span class="badge type-stretch">Stretch</span> multi-source string match paths checker</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/minimum-falling-path-sum/" target="_blank">Min Falling Path Sum (LC 931)</a></td><td><span class="badge type-contest">Contest</span> index adjacency tracking minimal value loops</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/maximal-rectangle/" target="_blank">Maximal Rectangle (LC 85)</a></td><td><span class="badge type-contest">Contest</span> row state history integration + histogram loops</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 19 — Knapsack Family</div>
+                <div class="pattern-meta">Difficulty: ADVANCED | Time: 5-6 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/partition-equal-subset-sum/" target="_blank">Partition Equal Subset Sum (LC 416)</a></td><td><span class="badge type-warmup">Warmup</span> target weight balance boolean mapping</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/coin-change/" target="_blank">Coin Change (LC 322)</a></td><td><span class="badge type-warmup">Warmup</span> unlimited element choice volume track</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/coin-change-ii/" target="_blank">Coin Change II (LC 518)</a></td><td><span class="badge type-core">Core</span> space loops sequencing item combination track</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/target-sum/" target="_blank">Target Sum (LC 494)</a></td><td><span class="badge type-core">Core</span> value transformation partition sizing maps</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/last-stone-weight-ii/" target="_blank">Last Stone Weight II (LC 1049)</a></td><td><span class="badge type-core">Core</span> target subset separation range limits</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/ones-and-zeroes/" target="_blank">Ones and Zeroes (LC 474)</a></td><td><span class="badge type-core">Core</span> dual capacity coordinate space boundaries</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/combination-sum-iv/" target="_blank">Combination Sum IV (LC 377)</a></td><td><span class="badge type-stretch">Stretch</span> index configuration routing loop selection rules</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/perfect-squares/" target="_blank">Perfect Squares (LC 279)</a></td><td><span class="badge type-stretch">Stretch</span> value scaling allocation strategy levels</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/profitable-schemes/" target="_blank">Profitable Schemes (LC 879)</a></td><td><span class="badge type-stretch">Stretch</span> resource ceiling combined with profit target logic</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/tallest-billboard/" target="_blank">Tallest Billboard (LC 956)</a></td><td><span class="badge type-contest">Contest</span> delta shift index evaluation matching table</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 20 — LCS Family</div>
+                <div class="pattern-meta">Difficulty: ADVANCED | Time: 4-5 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/longest-common-subsequence/" target="_blank">LCS (LC 1143)</a></td><td><span class="badge type-warmup">Warmup</span> baseline text token grid matrix track</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/edit-distance/" target="_blank">Edit Distance (LC 72)</a></td><td><span class="badge type-warmup">Warmup</span> transformation cost options mapping cuts</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/longest-palindromic-subsequence/" target="_blank">Longest Palindromic Subseq (LC 516)</a></td><td><span class="badge type-core">Core</span> reverse text correlation grid routing</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/shortest-common-supersequence/" target="_blank">Shortest Common Superseq (LC 1092)</a></td><td><span class="badge type-core">Core</span> matrix pathway backtrace layout build</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/distinct-subsequences/" target="_blank">Distinct Subsequences (LC 115)</a></td><td><span class="badge type-core">Core</span> matching choices pattern tracking layout</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/" target="_blank">Min ASCII Delete Sum (LC 712)</a></td><td><span class="badge type-core">Core</span> custom price balance sequence comparisons</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/interleaving-string/" target="_blank">Interleaving String (LC 97)</a></td><td><span class="badge type-stretch">Stretch</span> grid coordinate path validation status</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/wildcard-matching/" target="_blank">Wildcard Matching (LC 44)</a></td><td><span class="badge type-stretch">Stretch</span> sign tracking string index grid navigation</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/regular-expression-matching/" target="_blank">Regular Expression Match (LC 10)</a></td><td><span class="badge type-stretch">Stretch</span> structural control lookahead conditions loop</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/longest-palindromic-substring/" target="_blank">Longest Palindromic Substr (LC 5)</a></td><td><span class="badge type-contest">Contest</span> middle out index range growth validation</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/minimum-insertion-steps-to-make-a-palindrome/" target="_blank">Min Insertions Palindrome (LC 1312)</a></td><td><span class="badge type-contest">Contest</span> sequence length delta metrics reduction</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 21 — LIS Family</div>
+                <div class="pattern-meta">Difficulty: ADVANCED | Time: 3-4 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/longest-increasing-subsequence/" target="_blank">LIS (LC 300)</a></td><td><span class="badge type-warmup">Warmup</span> binary replacement tail array sequence</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/longest-string-chain/" target="_blank">Longest String Chain (LC 1048)</a></td><td><span class="badge type-warmup">Warmup</span> string length map key validation jumps</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/number-of-longest-increasing-subsequence/" target="_blank">Number of LIS (LC 673)</a></td><td><span class="badge type-core">Core</span> parallel count tracker integration logic</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/increasing-triplet-subsequence/" target="_blank">Increasing Triplet (LC 334)</a></td><td><span class="badge type-core">Core</span> simple local slot variables update metrics</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/maximum-length-of-pair-chain/" target="_blank">Max Length Pair Chain (LC 646)</a></td><td><span class="badge type-core">Core</span> greedy boundary end sorting execution</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/russian-doll-envelopes/" target="_blank">Russian Doll Envelopes (LC 354)</a></td><td><span class="badge type-stretch">Stretch</span> customized multi-sort grid + array LIS runs</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/longest-arithmetic-subsequence/" target="_blank">Longest Arithmetic Subseq (LC 1027)</a></td><td><span class="badge type-stretch">Stretch</span> variance gap metrics tracking dictionary table</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/make-array-strictly-increasing/" target="_blank">Make Array Increasing (LC 1187)</a></td><td><span class="badge type-stretch">Stretch</span> switch options matching range optimization</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/minimum-operations-to-make-the-array-increasing/" target="_blank">Min Operations Array Inc (LC 1827)</a></td><td><span class="badge type-contest">Contest</span> local tracking greed configuration corrections</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/longest-ideal-subsequence/" target="_blank">Longest Ideal Subseq (LC 2370)</a></td><td><span class="badge type-contest">Contest</span> localized map char distance range update</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/maximum-height-by-stacking-cuboids/" target="_blank">Stacking Cuboids Height (LC 1691)</a></td><td><span class="badge type-contest">Contest</span> axis dimension alignments + linear sorting LIS</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 22 — DP on Trees</div>
+                <div class="pattern-meta">Difficulty: ADVANCED | Time: 4-5 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/diameter-of-binary-tree/" target="_blank">Diameter of Tree (LC 543)</a></td><td><span class="badge type-warmup">Warmup</span> bottom-up structural node path comparisons</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/house-robber-iii/" target="_blank">House Robber III (LC 337)</a></td><td><span class="badge type-warmup">Warmup</span> child node select status pairs map</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/binary-tree-maximum-path-sum/" target="_blank">Maximum Path Sum (LC 124)</a></td><td><span class="badge type-core">Core</span> node routing separation value updates logic</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/binary-tree-cameras/" target="_blank">Binary Tree Cameras (LC 968)</a></td><td><span class="badge type-core">Core</span> node context tag states returns structure</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/longest-path-with-different-adjacent-characters/" target="_blank">Longest Path Diff Chars (LC 2246)</a></td><td><span class="badge type-core">Core</span> text criteria node selection maximum paths</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/sum-of-distances-in-tree/" target="_blank">Sum of Distances in Tree (LC 834)</a></td><td><span class="badge type-stretch">Stretch</span> double phase graph re-root calculations map</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/maximum-product-of-splitted-binary-tree/" target="_blank">Max Product Splitted Tree (LC 1339)</a></td><td><span class="badge type-stretch">Stretch</span> branch values addition total checking loops</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/minimum-cost-tree-from-leaf-values/" target="_blank">Min Cost Tree Leaf (LC 1130)</a></td><td><span class="badge type-contest">Contest</span> element section reduction range analysis table</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/tree-of-coprimes/" target="_blank">Tree of Coprimes (LC 1766)</a></td><td><span class="badge type-contest">Contest</span> factors search index track graph recursion</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/number-of-good-paths/" target="_blank">Number of Good Paths (LC 2421)</a></td><td><span class="badge type-contest">Contest</span> value filter node component sorting sets</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 23 — Interval DP</div>
+                <div class="pattern-meta">Difficulty: ADVANCED | Time: 4-5 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/longest-custom-subsequence/" target="_blank">Longest Palindromic Subseq (LC 516)</a></td><td><span class="badge type-warmup">Warmup</span> string segment side validation table rules</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/palindrome-partitioning-ii/" target="_blank">Palindrome Partitioning II (LC 132)</a></td><td><span class="badge type-warmup">Warmup</span> split coordinate minimization text array</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/burst-balloons/" target="_blank">Burst Balloons (LC 312)</a></td><td><span class="badge type-core">Core</span> terminal step index choice strategy layout</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/minimum-cost-to-cut-a-stick/" target="_blank">Min Cost Cut Stick (LC 1547)</a></td><td><span class="badge type-core">Core</span> cut mark alignment range metrics calculation</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/stone-game/" target="_blank">Stone Game (LC 877)</a></td><td><span class="badge type-core">Core</span> choice game dynamic optimization layout</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/strange-printer/" target="_blank">Strange Printer (LC 664)</a></td><td><span class="badge type-stretch">Stretch</span> text pattern overlap compression matches</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/minimum-score-triangulation-of-polygon/" target="_blank">Polygon Triangulation (LC 1039)</a></td><td><span class="badge type-stretch">Stretch</span> vertex split selection triangle computations</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/minimum-cost-to-merge-stones/" target="_blank">Merge Stones Cost (LC 1000)</a></td><td><span class="badge type-stretch">Stretch</span> block structural compression sequence steps</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/zuma-game/" target="_blank">Zuma Game (LC 488)</a></td><td><span class="badge type-contest">Contest</span> text manipulation sequence options matrix search</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/allocate-mailboxes/" target="_blank">Allocate Mailboxes (LC 1478)</a></td><td><span class="badge type-contest">Contest</span> spatial coordinate variance minimization runs</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 24 — Bitmask DP</div>
+                <div class="pattern-meta">Difficulty: ELITE | Time: 4-5 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/subsets/" target="_blank">Subsets Bitmask (LC 78)</a></td><td><span class="badge type-warmup">Warmup</span> digital register sequence combinations loop</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/partition-to-k-equal-sum-subsets/" target="_blank">Partition K Equal Sums (LC 698)</a></td><td><span class="badge type-warmup">Warmup</span> tracking code subset state bit operations</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/shortest-path-visiting-all-nodes/" target="_blank">Shortest Path All Nodes (LC 847)</a></td><td><span class="badge type-core">Core</span> node layer queue navigation mask updates</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/minimum-xor-sum-of-two-arrays/" target="_blank">Min XOR Sum Arrays (LC 1879)</a></td><td><span class="badge type-core">Core</span> sequence pairing assignment options table</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/maximum-students-taking-exam/" target="_blank">Max Students Exam (LC 1349)</a></td><td><span class="badge type-core">Core</span> grid level adjacency configurations index</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/number-of-ways-to-wear-different-hats-to-each-other/" target="_blank">Ways Wear Different Hats (LC 1434)</a></td><td><span class="badge type-stretch">Stretch</span> target assignment inversion indexing code</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/find-the-shortest-superstring/" target="_blank">Find Shortest Superstring (LC 943)</a></td><td><span class="badge type-stretch">Stretch</span> TSP logic string overlap optimization</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/parallel-courses-ii/" target="_blank">Parallel Courses II (LC 1494)</a></td><td><span class="badge type-stretch">Stretch</span> prerequisites state submask extraction rules</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/maximize-score-after-n-operations/" target="_blank">Maximize Score Operations (LC 1799)</a></td><td><span class="badge type-contest">Contest</span> dynamic pair selection bit math states</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/can-i-win/" target="_blank">Can I Win (LC 464)</a></td><td><span class="badge type-contest">Contest</span> game status selection search memo table</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/beautiful-arrangement/" target="_blank">Beautiful Arrangement (LC 526)</a></td><td><span class="badge type-contest">Contest</span> slot compliance combination value bits</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 25 — Digit DP</div>
+                <div class="pattern-meta">Difficulty: ELITE | Time: 4-5 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/count-numbers-with-unique-digits/" target="_blank">Unique Digits Counting (LC 357)</a></td><td><span class="badge type-warmup">Warmup</span> layout selection calculations framework</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/numbers-at-most-n-given-digit-set/" target="_blank">Numbers At Most N (LC 902)</a></td><td><span class="badge type-warmup">Warmup</span> ceiling indicator check state recursion</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/count-of-integers/" target="_blank">Count of Integers (LC 2719)</a></td><td><span class="badge type-core">Core</span> range value addition constraints matrix</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/non-negative-integers-without-consecutive-ones/" target="_blank">No Consecutive Ones (LC 600)</a></td><td><span class="badge type-core">Core</span> binary sequence placement rules check</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/number-of-digit-one/" target="_blank">Number of Digit One (LC 233)</a></td><td><span class="badge type-core">Core</span> target value match count accumulation</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/count-special-integers/" target="_blank">Count Special Integers (LC 2376)</a></td><td><span class="badge type-stretch">Stretch</span> layout value selection bit registration matrix</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/numbers-with-repeated-digits/" target="_blank">Numbers Repeated Digits (LC 1012)</a></td><td><span class="badge type-stretch">Stretch</span> inverse total selection rule subtraction logic</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/digit-count-in-range/" target="_blank">Digit Count in Range (LC 1067)</a></td><td><span class="badge type-stretch">Stretch</span> range bounds sequence delta evaluation</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/count-stepping-numbers-in-range/" target="_blank">Stepping Numbers Range (LC 2801)</a></td><td><span class="badge type-contest">Contest</span> adjacent value separation match limitations</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/rotated-digits/" target="_blank">Rotated Digits (LC 788)</a></td><td><span class="badge type-contest">Contest</span> character compliance verification state values</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="phase-section">
+        <h2 class="phase-title">PHASE 4 — ADVANCED PATTERNS (Weeks 10-14)</h2>
+
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 26 — Trie</div>
+                <div class="pattern-meta">Difficulty: ADVANCED | Time: 3-4 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/implement-trie-prefix-tree/" target="_blank">Implement Trie (LC 208)</a></td><td><span class="badge type-warmup">Warmup</span> character index node pointer matrix setup</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/design-add-and-search-words-data-structure/" target="_blank">Add and Search Words (LC 211)</a></td><td><span class="badge type-warmup">Warmup</span> structural routing wildcard DFS loop</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/word-search-ii/" target="_blank">Word Search II (LC 212)</a></td><td><span class="badge type-core">Core</span> dynamic index grid tracking + tree branch cuts</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/replace-words/" target="_blank">Replace Words (LC 648)</a></td><td><span class="badge type-core">Core</span> text prefix localization matching loops</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/" target="_blank">Max XOR Two Numbers (LC 421)</a></td><td><span class="badge type-core">Core</span> digital register path selection logic tree</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/longest-word-in-dictionary/" target="_blank">Longest Word Dictionary (LC 720)</a></td><td><span class="badge type-core">Core</span> tree validation layer navigation tracking</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/map-sum-pairs/" target="_blank">Map Sum Pairs (LC 677)</a></td><td><span class="badge type-stretch">Stretch</span> node value metrics aggregation logic</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/palindrome-pairs/" target="_blank">Palindrome Pairs (LC 336)</a></td><td><span class="badge type-stretch">Stretch</span> text slicing logic + reverse index lookup trees</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/stream-of-characters/" target="_blank">Stream of Characters (LC 1032)</a></td><td><span class="badge type-contest">Contest</span> reverse text sequence scanning strategy</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/maximum-xor-with-an-element-from-array/" target="_blank">Max XOR With Element (LC 1707)</a></td><td><span class="badge type-contest">Contest</span> request sorting logic + offline index building tree</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 27 — Segment Tree</div>
+                <div class="pattern-meta">Difficulty: ELITE | Time: 5-7 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/range-sum-query-mutable/" target="_blank">Range Sum Query Mutable (LC 307)</a></td><td><span class="badge type-warmup">Warmup</span> array index structure update + query loops</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/count-of-smaller-numbers-after-self/" target="_blank">Count Smaller After Self (LC 315)</a></td><td><span class="badge type-core">Core</span> element coordinates value tree scanning</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/count-of-range-sum/" target="_blank">Count of Range Sum (LC 327)</a></td><td><span class="badge type-core">Core</span> range split tracking or value tree indices</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/falling-squares/" target="_blank">Falling Squares (LC 699)</a></td><td><span class="badge type-core">Core</span> index coordinate values range updates limits</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/my-calendar-i/" target="_blank">My Calendar I / II / III (LC 729)</a></td><td><span class="badge type-core">Core</span> dynamic timeline range overlay indicators</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/reverse-pairs/" target="_blank">Reverse Pairs (LC 493)</a></td><td><span class="badge type-stretch">Stretch</span> sequence sorting tracking index modifications tree</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/the-skyline-problem/" target="_blank">The Skyline Problem (LC 218)</a></td><td><span class="badge type-stretch">Stretch</span> line scanning process + active height tracks</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/rectangle-area-ii/" target="_blank">Rectangle Area II (LC 850)</a></td><td><span class="badge type-contest">Contest</span> sweep timeline logic + length tree balance</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/longest-increasing-subsequence-ii/" target="_blank">LIS II (LC 2407)</a></td><td><span class="badge type-contest">Contest</span> dynamic state range max tracking adjustments</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/range-module/" target="_blank">Range Module (LC 715)</a></td><td><span class="badge type-contest">Contest</span> segment values structural coverage toggle tree</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 28 — Fenwick Tree (BIT)</div>
+                <div class="pattern-meta">Difficulty: ADVANCED | Time: 2-3 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/range-sum-query-mutable/" target="_blank">Range Sum Mutable (LC 307)</a></td><td><span class="badge type-warmup">Warmup</span> digital index bit shift additions data structure</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/count-of-smaller-numbers-after-self/" target="_blank">Count Smaller After Self (LC 315)</a></td><td><span class="badge type-core">Core</span> value scaling index mapping tree loops</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/reverse-pairs/" target="_blank">Reverse Pairs (LC 493)</a></td><td><span class="badge type-core">Core</span> coordinate balance counting bit updates</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/create-sorted-array-through-instructions/" target="_blank">Create Sorted Array Cost (LC 1649)</a></td><td><span class="badge type-core">Core</span> tracking position variance min cost totals</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/count-good-triplets-in-an-array/" target="_blank">Count Good Triplets Array (LC 2179)</a></td><td><span class="badge type-stretch">Stretch</span> dual step tracking indices correlation trees</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/range-sum-query-2d-mutable/" target="_blank">Range Sum Query 2D Mutable (LC 308)</a></td><td><span class="badge type-stretch">Stretch</span> dual axis bit transformation array grid</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/global-and-local-inversions/" target="_blank">Global/Local Inversions (LC 775)</a></td><td><span class="badge type-contest">Contest</span> condition value location variance metrics</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/longest-increasing-subsequence/" target="_blank">LIS Fenwick Optimization (LC 300)</a></td><td><span class="badge type-contest">Contest</span> value coordinate height balance maximum updates</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 29 — Monotonic Deque</div>
+                <div class="pattern-meta">Difficulty: ADVANCED | Time: 2-3 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/sliding-window-maximum/" target="_blank">Sliding Window Maximum (LC 239)</a></td><td><span class="badge type-warmup">Warmup</span> index sequence values tracking double queue</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/jump-game-vi/" target="_blank">Jump Game VI (LC 1696)</a></td><td><span class="badge type-core">Core</span> route step value optimization + structural queue</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/constrained-subsequence-sum/" target="_blank">Constrained Subseq Sum (LC 1425)</a></td><td><span class="badge type-core">Core</span> distance limit balance dynamic updates queue</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/" target="_blank">Shortest Subarray Sum K (LC 862)</a></td><td><span class="badge type-stretch">Stretch</span> prefix sum layout tracking structural clearing</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/" target="_blank">Continuous Subarray Limit (LC 1438)</a></td><td><span class="badge type-stretch">Stretch</span> dual min/max tracking structural queues loop</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/max-value-of-equation/" target="_blank">Max Value of Equation (LC 1499)</a></td><td><span class="badge type-contest">Contest</span> expression value index optimization bounds</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/maximum-number-of-robots-within-budget/" target="_blank">Max Robots Budget (LC 2398)</a></td><td><span class="badge type-contest">Contest</span> cost window balancing + tracking loop queue</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 30 — Topological Sort</div>
+                <div class="pattern-meta">Difficulty: ADVANCED | Time: 3-4 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/course-schedule/" target="_blank">Course Schedule (LC 207)</a></td><td><span class="badge type-warmup">Warmup</span> node connection constraints dependency tracking</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/course-schedule-ii/" target="_blank">Course Schedule II (LC 210)</a></td><td><span class="badge type-warmup">Warmup</span> processing sequence configuration generation</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/alien-dictionary/" target="_blank">Alien Dictionary (LC 269)</a></td><td><span class="badge type-core">Core</span> text sequence criteria graph construction</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/minimum-height-trees/" target="_blank">Minimum Height Trees (LC 310)</a></td><td><span class="badge type-core">Core</span> terminal node layer inward deletion loops</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/course-schedule-iv/" target="_blank">Course Schedule IV (LC 1462)</a></td><td><span class="badge type-core">Core</span> node routing verification connection matrix</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/longest-increasing-path-in-a-matrix/" target="_blank">Longest Increasing Path (LC 329)</a></td><td><span class="badge type-stretch">Stretch</span> coordinate path routing sequence memo sets</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/parallel-courses/" target="_blank">Parallel Courses (LC 1136)</a></td><td><span class="badge type-stretch">Stretch</span> sequence layer optimization metrics tracking</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/sequence-reconstruction/" target="_blank">Sequence Reconstruction (LC 444)</a></td><td><span class="badge type-stretch">Stretch</span> sequence layout unique confirmation loop</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/sort-items-by-groups-respecting-dependencies/" target="_blank">Sort Items by Groups (LC 1203)</a></td><td><span class="badge type-contest">Contest</span> dual stage tracking graph alignment layout</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/build-a-matrix-with-conditions/" target="_blank">Build Matrix Conditions (LC 2392)</a></td><td><span class="badge type-contest">Contest</span> double axis constraint sequence coordinates</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 31 — Minimum Spanning Tree</div>
+                <div class="pattern-meta">Difficulty: ADVANCED | Time: 2-3 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/min-cost-to-connect-all-points/" target="_blank">Min Cost Connect Points (LC 1584)</a></td><td><span class="badge type-warmup">Warmup</span> line metric weight edge selection loops</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/connecting-cities-with-minimum-cost/" target="_blank">Connect Cities Min Cost (LC 1135)</a></td><td><span class="badge type-core">Core</span> primary edge integration partition sets</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/optimize-water-distribution-in-a-village/" target="_blank">Optimize Water Distribution (LC 1168)</a></td><td><span class="badge type-core">Core</span> virtual root node structure construction map</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree/" target="_blank">Critical Edges in MST (LC 1489)</a></td><td><span class="badge type-stretch">Stretch</span> edge filter exclusion checks partition trees</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/remove-max-number-of-edges-to-keep-graph-fully-connected/" target="_blank">Remove Max Edges (LC 1579)</a></td><td><span class="badge type-contest">Contest</span> dual data partition structures mapping links</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 32 — Strongly Connected Components</div>
+                <div class="pattern-meta">Difficulty: ELITE | Time: 3-4 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/critical-connections-in-a-network/" target="_blank">Critical Connections (LC 1192)</a></td><td><span class="badge type-warmup">Warmup</span> graph structural loop trace check bounds</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/minimum-number-of-days-to-disconnect-island/" target="_blank">Disconnect Island Days (LC 1568)</a></td><td><span class="badge type-stretch">Stretch</span> connection node structural cut locations</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 33 — String Algorithms</div>
+                <div class="pattern-meta">Difficulty: ADVANCED | Time: 4-5 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/" target="_blank">First Occurrence Index (LC 28)</a></td><td><span class="badge type-warmup">Warmup</span> text token window matching alignment</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/repeated-substring-pattern/" target="_blank">Repeated Substring Pattern (LC 459)</a></td><td><span class="badge type-core">Core</span> character lookup offset sequence mapping</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/shortest-palindrome/" target="_blank">Shortest Palindrome (LC 214)</a></td><td><span class="badge type-core">Core</span> text matching index sequence analysis</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/longest-happy-prefix/" target="_blank">Longest Happy Prefix (LC 1392)</a></td><td><span class="badge type-core">Core</span> boundary prefix array balance values</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/longest-duplicate-substring/" target="_blank">Longest Duplicate Substring (LC 1044)</a></td><td><span class="badge type-stretch">Stretch</span> size split check + rolling hash structure</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/distinct-echo-substrings/" target="_blank">Distinct Echo Substrings (LC 1316)</a></td><td><span class="badge type-contest">Contest</span> character rolling checksum set validation</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/sum-of-scores-of-built-strings/" target="_blank">Sum Scores Built Strings (LC 2223)</a></td><td><span class="badge type-contest">Contest</span> text tracking function index totals</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/minimum-time-to-revert-word-to-initial-state-i/" target="_blank">Revert Word Time I (LC 3029)</a></td><td><span class="badge type-contest">Contest</span> shift check range index evaluation</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 34 — Greedy (Formal Treatment)</div>
+                <div class="pattern-meta">Difficulty: ADVANCED | Time: 4-5 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/assign-cookies/" target="_blank">Assign Cookies (LC 455)</a></td><td><span class="badge type-warmup">Warmup</span> sequence sort + pairing alignment loops</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/jump-game/" target="_blank">Jump Game (LC 55)</a></td><td><span class="badge type-warmup">Warmup</span> ceiling distance range tracking index</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/gas-station/" target="_blank">Gas Station (LC 134)</a></td><td><span class="badge type-core">Core</span> loop range total metrics tracking checks</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/candy/" target="_blank">Candy (LC 135)</a></td><td><span class="badge type-core">Core</span> bidirectional boundary parsing steps</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/task-scheduler/" target="_blank">Task Scheduler (LC 621)</a></td><td><span class="badge type-core">Core</span> value distribution layout sizing code</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/" target="_blank">Burst Balloons Arrows (LC 452)</a></td><td><span class="badge type-core">Core</span> range grouping choices sorting check</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/queue-reconstruction-by-height/" target="_blank">Queue Reconstruction (LC 406)</a></td><td><span class="badge type-stretch">Stretch</span> sorting criteria + data insertion blocks</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/partition-labels/" target="_blank">Partition Labels (LC 763)</a></td><td><span class="badge type-stretch">Stretch</span> coordinate map terminal index updates</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/earliest-possible-day-of-full-bloom/" target="_blank">Day of Full Bloom (LC 2136)</a></td><td><span class="badge type-contest">Contest</span> metric parameters sorting execution priorities</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/minimum-replacements-to-sort-array/" target="_blank">Min Replacements Sort (LC 2366)</a></td><td><span class="badge type-contest">Contest</span> reverse direction scaling division code</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pattern-container">
+            <div class="pattern-header">
+                <div class="pattern-title">Pattern 35 — Math and Number Theory</div>
+                <div class="pattern-meta">Difficulty: ADVANCED | Time: 4-5 days</div>
+            </div>
+            <table>
+                <thead>
+                    <tr><th class="checkbox-col">✓</th><th>Problem</th><th>Type Description</th><th>Difficulty</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/count-primes/" target="_blank">Count Primes (LC 204)</a></td><td><span class="badge type-warmup">Warmup</span> index grid validation step loops</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/power-of-two/" target="_blank">Power of Two (LC 231)</a></td><td><span class="badge type-warmup">Warmup</span> digital register bit alignment verification</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/power-of-three/" target="_blank">Power of Three (LC 326)</a></td><td><span class="badge type-warmup">Warmup</span> maximum scale evaluation division check</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/greatest-common-divisor-of-strings/" target="_blank">GCD of Strings (LC 1071)</a></td><td><span class="badge type-core">Core</span> factor string configuration matching loops</td><td><span class="badge diff-easy">Easy</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/powx-n/" target="_blank">Pow(x, n) (LC 50)</a></td><td><span class="badge type-core">Core</span> digital split range multiplication paths</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/count-good-numbers/" target="_blank">Count Good Numbers (LC 1922)</a></td><td><span class="badge type-core">Core</span> modular exponentiation digital split calculation</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/unique-paths/" target="_blank">Unique Paths Combinatorics (LC 62)</a></td><td><span class="badge type-core">Core</span> factor division selection formulation matrix</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/super-pow/" target="_blank">Super Pow (LC 372)</a></td><td><span class="badge type-stretch">Stretch</span> digit array modular scale calculations</td><td><span class="badge diff-medium">Medium</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/largest-component-size-by-common-factor/" target="_blank">Component Size Factor (LC 952)</a></td><td><span class="badge type-stretch">Stretch</span> values prime indexing maps + components DSU</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                    <tr><td><input type="checkbox"></td><td><a href="https://leetcode.com/problems/count-anagrams/" target="_blank">Count Anagrams (LC 2514)</a></td><td><span class="badge type-contest">Contest</span> factorial calculations + modular inverse layout</td><td><span class="badge diff-hard">Hard</span></td></tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 
 <script>
-    // LocalStorage persistence to keep tracks across refreshes
+    // LocalStorage tracking engine to persist state across reloads
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
     checkboxes.forEach((cb, idx) => {
-        const id = `dsa-task-${idx}`;
+        const id = `dsa-task-master-${idx}`;
         cb.checked = localStorage.getItem(id) === 'true';
         cb.addEventListener('change', () => {
             localStorage.setItem(id, cb.checked);
@@ -411,5 +1053,4 @@
     });
 </script>
 </body>
-    
 </html>

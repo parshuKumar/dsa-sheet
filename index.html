@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Grandmaster Mastery War Plan</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --border: #30363d;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --easy: #2ea043;
+            --medium: #d29922;
+            --hard: #f85149;
+            --warmup: #8957e5;
+            --core: #1f6feb;
+            --stretch: #da3633;
+            --contest: #db6d28;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .phase-section {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 35px;
+        }
+
+        .phase-title {
+            color: var(--accent);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+
+        .pattern-title {
+            color: #fff;
+            font-size: 1.2rem;
+            margin: 20px 0 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background-color: rgba(0, 0, 0, 0.2);
+            color: #fff;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 2em;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .diff-easy { background-color: var(--easy); }
+        .diff-medium { background-color: var(--medium); }
+        .diff-hard { background-color: var(--hard); }
+
+        .type-warmup { background-color: var(--warmup); }
+        .type-core { background-color: var(--core); }
+        .type-stretch { background-color: var(--stretch); }
+        .type-contest { background-color: var(--contest); }
+
+        .checkbox-col {
+            width: 40px;
+            text-align: center;
+        }
+
+        input[type="checkbox"] {
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>DSA GRANDMASTER MASTERY</h1>
+        <div class="subtitle">From 1600 → 2000+ Rating | 4 Months | C++ Dashboard</div>
+    </header>
+
+    <div class="phase-section">
+        <h2 class="phase-title">PHASE 1 — FOUNDATION (Weeks 1-3)</h2>
+
+        <div class="pattern-title">
+            <span>Pattern 01 — Arrays and Hashing</span>
+            <span style="font-size: 0.9rem; color: var(--text-muted)">Difficulty: FOUNDATION</span>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th class="checkbox-col">✓</th>
+                    <th>Problem Name</th>
+                    <th>Type Description</th>
+                    <th>Difficulty</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/two-sum/" target="_blank">Two Sum (LC 1)</a></td>
+                    <td><span class="badge type-warmup">Warmup</span> complement lookup</td>
+                    <td><span class="badge diff-easy">Easy</span></td>
+                </tr>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/contains-duplicate/" target="_blank">Contains Duplicate (LC 217)</a></td>
+                    <td><span class="badge type-warmup">Warmup</span> hash set existence</td>
+                    <td><span class="badge diff-easy">Easy</span></td>
+                </tr>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/valid-anagram/" target="_blank">Valid Anagram (LC 242)</a></td>
+                    <td><span class="badge type-core">Core</span> frequency counting</td>
+                    <td><span class="badge diff-easy">Easy</span></td>
+                </tr>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/group-anagrams/" target="_blank">Group Anagrams (LC 49)</a></td>
+                    <td><span class="badge type-core">Core</span> grouping by sorted key</td>
+                    <td><span class="badge diff-medium">Medium</span></td>
+                </tr>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/top-k-frequent-elements/" target="_blank">Top K Frequent Elements (LC 347)</a></td>
+                    <td><span class="badge type-core">Core</span> frequency + bucket sort</td>
+                    <td><span class="badge diff-medium">Medium</span></td>
+                </tr>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/product-of-array-except-self/" target="_blank">Product of Array Except Self (LC 238)</a></td>
+                    <td><span class="badge type-core">Core</span> prefix/suffix without division</td>
+                    <td><span class="badge diff-medium">Medium</span></td>
+                </tr>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/longest-consecutive-sequence/" target="_blank">Longest Consecutive Sequence (LC 128)</a></td>
+                    <td><span class="badge type-stretch">Stretch</span> hash set + intelligent start</td>
+                    <td><span class="badge diff-medium">Medium</span></td>
+                </tr>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/subarray-sum-equals-k/" target="_blank">Subarray Sum Equals K (LC 560)</a></td>
+                    <td><span class="badge type-stretch">Stretch</span> prefix sum + hash map</td>
+                    <td><span class="badge diff-medium">Medium</span></td>
+                </tr>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/encode-and-decode-strings/" target="_blank">Encode and Decode Strings (LC 271)</a></td>
+                    <td><span class="badge type-stretch">Stretch</span> encoding design</td>
+                    <td><span class="badge diff-medium">Medium</span></td>
+                </tr>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/first-missing-positive/" target="_blank">First Missing Positive (LC 41)</a></td>
+                    <td><span class="badge type-contest">Contest</span> cyclic sort / index mapping</td>
+                    <td><span class="badge diff-hard">Hard</span></td>
+                </tr>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/minimum-window-substring/" target="_blank">Minimum Window Substring - Hash Part (LC 76)</a></td>
+                    <td><span class="badge type-contest">Contest</span> frequency matching</td>
+                    <td><span class="badge diff-hard">Hard</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="pattern-title">
+            <span>Pattern 02 — Two Pointers</span>
+            <span style="font-size: 0.9rem; color: var(--text-muted)">Difficulty: FOUNDATION</span>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th class="checkbox-col">✓</th>
+                    <th>Problem Name</th>
+                    <th>Type Description</th>
+                    <th>Difficulty</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/valid-palindrome/" target="_blank">Valid Palindrome (LC 125)</a></td>
+                    <td><span class="badge type-warmup">Warmup</span> opposite direction</td>
+                    <td><span class="badge diff-easy">Easy</span></td>
+                </tr>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/" target="_blank">Two Sum II - Sorted (LC 167)</a></td>
+                    <td><span class="badge type-warmup">Warmup</span> classic left-right</td>
+                    <td><span class="badge diff-medium">Medium</span></td>
+                </tr>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/3sum/" target="_blank">3Sum (LC 15)</a></td>
+                    <td><span class="badge type-core">Core</span> three pointers, skip duplicates</td>
+                    <td><span class="badge diff-medium">Medium</span></td>
+                </tr>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/container-with-most-water/" target="_blank">Container With Most Water (LC 11)</a></td>
+                    <td><span class="badge type-core">Core</span> shrink the lesser side</td>
+                    <td><span class="badge diff-medium">Medium</span></td>
+                </tr>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/sort-colors/" target="_blank">Sort Colors (LC 75)</a></td>
+                    <td><span class="badge type-core">Core</span> Dutch national flag</td>
+                    <td><span class="badge diff-medium">Medium</span></td>
+                </tr>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/" target="_blank">Remove Duplicates II (LC 80)</a></td>
+                    <td><span class="badge type-core">Core</span> same direction write pointer</td>
+                    <td><span class="badge diff-medium">Medium</span></td>
+                </tr>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/trapping-rain-water/" target="_blank">Trapping Rain Water (LC 42)</a></td>
+                    <td><span class="badge type-stretch">Stretch</span> two pointer with max tracking</td>
+                    <td><span class="badge diff-hard">Hard</span></td>
+                </tr>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/4sum/" target="_blank">4Sum (LC 18)</a></td>
+                    <td><span class="badge type-stretch">Stretch</span> extend 3Sum pattern</td>
+                    <td><span class="badge diff-medium">Medium</span></td>
+                </tr>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/boats-to-save-people/" target="_blank">Boats to Save People (LC 881)</a></td>
+                    <td><span class="badge type-stretch">Stretch</span> greedy + two pointers</td>
+                    <td><span class="badge diff-medium">Medium</span></td>
+                </tr>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/shortest-unsorted-continuous-subarray/" target="_blank">Shortest Unsorted Subarray (LC 581)</a></td>
+                    <td><span class="badge type-contest">Contest</span> find boundaries</td>
+                    <td><span class="badge diff-medium">Medium</span></td>
+                </tr>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/number-of-subsequences-that-satisfy-given-sum/" target="_blank">Number of Subsequences (LC 1498)</a></td>
+                    <td><span class="badge type-contest">Contest</span> two pointer + modular arithmetic</td>
+                    <td><span class="badge diff-medium">Medium</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="phase-section">
+        <h2 class="phase-title">PHASE 2 — CORE DATA STRUCTURES (Weeks 3-6)</h2>
+
+        <div class="pattern-title">
+            <span>Pattern 07 — Linked Lists</span>
+            <span style="font-size: 0.9rem; color: var(--text-muted)">Difficulty: CORE</span>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th class="checkbox-col">✓</th>
+                    <th>Problem Name</th>
+                    <th>Type Description</th>
+                    <th>Difficulty</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/reverse-linked-list/" target="_blank">Reverse Linked List (LC 206)</a></td>
+                    <td><span class="badge type-warmup">Warmup</span> basic reversal</td>
+                    <td><span class="badge diff-easy">Easy</span></td>
+                </tr>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/linked-list-cycle/" target="_blank">Linked List Cycle (LC 141)</a></td>
+                    <td><span class="badge type-warmup">Warmup</span> fast-slow detection</td>
+                    <td><span class="badge diff-easy">Easy</span></td>
+                </tr>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/merge-two-sorted-lists/" target="_blank">Merge Two Sorted Lists (LC 21)</a></td>
+                    <td><span class="badge type-core">Core</span> merge with dummy</td>
+                    <td><span class="badge diff-easy">Easy</span></td>
+                </tr>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/" target="_blank">Remove Nth Node From End (LC 19)</a></td>
+                    <td><span class="badge type-core">Core</span> two pointer gap technique</td>
+                    <td><span class="badge diff-medium">Medium</span></td>
+                </tr>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/linked-list-cycle-ii/" target="_blank">Linked List Cycle II (LC 142)</a></td>
+                    <td><span class="badge type-core">Core</span> find cycle entry point</td>
+                    <td><span class="badge diff-medium">Medium</span></td>
+                </tr>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/reorder-list/" target="_blank">Reorder List (LC 143)</a></td>
+                    <td><span class="badge type-core">Core</span> find middle + reverse + merge</td>
+                    <td><span class="badge diff-medium">Medium</span></td>
+                </tr>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/copy-list-with-random-pointer/" target="_blank">Copy List with Random Pointer (LC 138)</a></td>
+                    <td><span class="badge type-stretch">Stretch</span> hash map or interleaving</td>
+                    <td><span class="badge diff-medium">Medium</span></td>
+                </tr>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/add-two-numbers/" target="_blank">Add Two Numbers (LC 2)</a></td>
+                    <td><span class="badge type-stretch">Stretch</span> carry propagation</td>
+                    <td><span class="badge diff-medium">Medium</span></td>
+                </tr>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/lru-cache/" target="_blank">LRU Cache (LC 146)</a></td>
+                    <td><span class="badge type-stretch">Stretch</span> doubly linked list + hash map</td>
+                    <td><span class="badge diff-medium">Medium</span></td>
+                </tr>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/merge-k-sorted-lists/" target="_blank">Merge K Sorted Lists (LC 23)</a></td>
+                    <td><span class="badge type-contest">Contest</span> heap + linked list</td>
+                    <td><span class="badge diff-hard">Hard</span></td>
+                </tr>
+                <tr>
+                    <td class="checkbox-col"><input type="checkbox"></td>
+                    <td><a href="https://leetcode.com/problems/reverse-nodes-in-k-group/" target="_blank">Reverse Nodes in k-Group (LC 25)</a></td>
+                    <td><span class="badge type-contest">Contest</span> batch reversal</td>
+                    <td><span class="badge diff-hard">Hard</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    // LocalStorage persistence to keep tracks across refreshes
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach((cb, idx) => {
+        const id = `dsa-task-${idx}`;
+        cb.checked = localStorage.getItem(id) === 'true';
+        cb.addEventListener('change', () => {
+            localStorage.setItem(id, cb.checked);
+        });
+    });
+</script>
+</body>
+</html>
